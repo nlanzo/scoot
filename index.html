@@ -13,17 +13,47 @@
 
     <title>Frontend Mentor | Scoot</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+    <script src="script.js" async></script>
   </head>
   <body>
-    <header>
+    <header class="topnav">
       <img src="./assets/logo.svg" alt="Scoot Home" width="108" height="29" />
+
       <nav>
-        <ul>
-          <li><a href="">About</a></li>
-          <li><a href="">Location</a></li>
-          <li><a href="">Careers</a></li>
-          <li><a href="" class="button">Get Scootin</a></li>
-        </ul>
+        <span id="nav-label" hidden>Navigation</span>
+        <button
+          id="btnOpen"
+          class="topnav__open"
+          aria-expanded="false"
+          aria-labelledby="nav-label"
+        >
+          <img
+            src="./assets/icons/hamburger.svg"
+            alt=""
+            width="20"
+            height="16"
+          />
+        </button>
+        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+          <button class="topnav__close" id="btnClose" aria-label="Close">
+            <img src="./assets/icons/close.svg" alt="" width="18" height="18" />
+          </button>
+          <ul class="topnav__links">
+            <li class="topnav__item">
+              <a href="" class="topnav__link">About</a>
+            </li>
+            <li class="topnav__item">
+              <a href="" class="topnav__link">Location</a>
+            </li>
+            <li class="topnav__item">
+              <a href="" class="topnav__link">Careers</a>
+            </li>
+            <li class="topnav__item">
+              <a href="" class="button">Get Scootin</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
