@@ -160,6 +160,8 @@
 
     .header-links {
       justify-self: start;
+      display: grid;
+      align-items: center;
 
       @media (width >= calc(700 / 16 * 1rem)) {
         justify-self: end;
@@ -175,7 +177,6 @@
 
 @layer topnav {
   .topnav {
-    padding-block: 0.5rem;
   }
 
   .topnav button {
@@ -240,7 +241,7 @@
 
     &:last-child {
       @media (width >= calc(700 / 16 * 1rem)) {
-        margin-inline-start: 94px;
+        margin-inline-start: 80px;
       }
       @media (width >= calc(1000 / 16 * 1rem)) {
         margin-left: auto;
