@@ -182,7 +182,7 @@
     &::before {
       content: "";
       position: fixed;
-      inset: 0;
+      inset: 69px 0 0 0;
       background: var(--c-black-overlay);
       opacity: 0;
       pointer-events: none;
@@ -194,6 +194,7 @@
   }
 
   .topnav button {
+    translate: 0 2px;
     background: none;
     border: none;
     padding: 0;
@@ -203,32 +204,38 @@
     }
   }
 
-  .topnav__open[aria-expanded="true"] + .topnav__menu {
+  .topnav__open[aria-expanded="true"] {
+    display: none;
+  }
+
+  .topnav__open[aria-expanded="true"] + .topnav__menu .topnav__menu-content {
     translate: 0;
 
     @media (prefers-reduced-motion) {
       opacity: 1;
     }
   }
-  .topnav__open[aria-expanded="true"] + .topnav__menu::before {
+  .topnav__open[aria-expanded="true"] + .topnav__menu-content::before {
     opacity: 1;
   }
 
-  .topnav__close {
+  .topnav__open[aria-expanded="true"] + .topnav__menu .topnav__close {
     display: block;
-    margin-inline-start: auto;
-    margin-block-end: 8rem;
-
-    img {
-      width: 2.5rem;
-    }
   }
 
-  .topnav__menu {
+  .topnav__close {
+    display: none;
+    margin-inline-start: auto;
+    margin-block-end: 8rem;
+    position: absolute;
+    top: 24px;
+  }
+
+  .topnav__menu-content {
     @media (width < calc(700 / 16 * 1rem)) {
       position: fixed;
-      inset: 0 120px 0 0;
-      padding: 1.5rem;
+      inset: 69px 120px 0 0;
+      padding: 64px 32px 24px;
       background-color: var(--c-xdark-navy);
       translate: -100vw 0;
       transition: translate 0.5s ease-in-out;
