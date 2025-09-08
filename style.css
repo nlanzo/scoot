@@ -69,6 +69,7 @@
     --c-light-grey: hsl(212, 41%, 93%);
     --c-snow: hsl(214, 37%, 96%);
     --c-light-yellow: hsl(39, 100%, 94%);
+    --c-black-overlay: hsla(0, 0%, 0%, 0.75);
   }
 }
 
@@ -178,6 +179,18 @@
 
 @layer topnav {
   .topnav {
+    &::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: var(--c-black-overlay);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+    &:has(.topnav__open[aria-expanded="true"])::before {
+      opacity: 1;
+    }
   }
 
   .topnav button {
@@ -197,6 +210,9 @@
       opacity: 1;
     }
   }
+  .topnav__open[aria-expanded="true"] + .topnav__menu::before {
+    opacity: 1;
+  }
 
   .topnav__close {
     display: block;
@@ -211,10 +227,10 @@
   .topnav__menu {
     @media (width < calc(700 / 16 * 1rem)) {
       position: fixed;
-      inset: 0;
+      inset: 0 120px 0 0;
       padding: 1.5rem;
       background-color: var(--c-xdark-navy);
-      translate: 100vw 0;
+      translate: -100vw 0;
       transition: translate 0.5s ease-in-out;
     }
 
