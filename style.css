@@ -239,6 +239,9 @@
       background-color: var(--c-xdark-navy);
       translate: -100vw 0;
       transition: translate 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     @media (width < calc(700 / 16 * 1rem)) and (prefers-reduced-motion) {
@@ -251,7 +254,6 @@
   .topnav__links {
     display: flex;
     gap: 1rem;
-    align-items: center;
     margin: 0;
     padding: 0;
 
