@@ -147,6 +147,7 @@
 @layer header {
   .header {
     padding-block: 20px;
+    align-items: center;
 
     .header-logo,
     .header-links {
@@ -166,12 +167,8 @@
       align-items: center;
 
       @media (width >= calc(700 / 16 * 1rem)) {
-        justify-self: end;
-      }
-
-      @media (width >= calc(1000 / 16 * 1rem)) {
-        justify-self: stretch;
-        margin-inline-start: 167px;
+        padding-left: 167px;
+        width: 100%;
       }
     }
   }
@@ -232,16 +229,17 @@
   }
 
   .topnav__menu-content {
+    display: flex;
+    justify-content: space-between;
+
     @media (width < calc(700 / 16 * 1rem)) {
+      flex-direction: column;
       position: fixed;
       inset: 69px 120px 0 0;
       padding: 64px 32px 24px;
       background-color: var(--c-xdark-navy);
       translate: -100vw 0;
       transition: translate 0.5s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     @media (width < calc(700 / 16 * 1rem)) and (prefers-reduced-motion) {
@@ -253,26 +251,19 @@
 
   .topnav__links {
     display: flex;
+    align-items: center;
     gap: 1rem;
     margin: 0;
     padding: 0;
 
     @media (width < calc(700 / 16 * 1rem)) {
       flex-direction: column;
+      align-items: stretch;
     }
   }
 
   .topnav__item {
     list-style-type: none;
-
-    &:last-child {
-      @media (width >= calc(700 / 16 * 1rem)) {
-        margin-inline-start: 80px;
-      }
-      @media (width >= calc(1000 / 16 * 1rem)) {
-        margin-left: auto;
-      }
-    }
   }
 
   .topnav__link {
