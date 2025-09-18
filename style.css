@@ -131,6 +131,10 @@
     > * {
       grid-column: 2;
     }
+
+    > .fullbleed {
+      grid-column: 1 / -1;
+    }
   }
 }
 
@@ -272,6 +276,14 @@
 
     @media (width >= calc(700 / 16 * 1rem)) {
       color: var(--c-dim-grey);
+    }
+  }
+}
+
+@layer hero {
+  .hero {
+    .hero-img {
+      width: 100%;
     }
   }
 }
