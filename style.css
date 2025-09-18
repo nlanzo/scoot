@@ -203,21 +203,20 @@
 
   .topnav__open[aria-expanded="true"] {
     display: none;
-  }
 
-  .topnav__open[aria-expanded="true"] + .topnav__menu .topnav__menu-content {
-    translate: 0;
+    + .topnav__menu .topnav__menu-content {
+      translate: 0;
 
-    @media (prefers-reduced-motion) {
+      @media (prefers-reduced-motion) {
+        opacity: 1;
+      }
+    }
+    + .topnav__menu-content::before {
       opacity: 1;
     }
-  }
-  .topnav__open[aria-expanded="true"] + .topnav__menu-content::before {
-    opacity: 1;
-  }
-
-  .topnav__open[aria-expanded="true"] + .topnav__menu .topnav__close {
-    display: block;
+    + .topnav__menu .topnav__close {
+      display: block;
+    }
   }
 
   .topnav__close {
