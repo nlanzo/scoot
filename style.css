@@ -95,13 +95,6 @@
 
   h1,
   h2,
-  h3,
-  p {
-    text-align: center;
-  }
-
-  h1,
-  h2,
   h3 {
     font-family: var(--ff-mono);
     margin: 0;
@@ -297,25 +290,53 @@
       grid-row: 1;
     }
     .hero-picture {
+      max-height: 100vh;
+      overflow: clip;
     }
     .hero-img {
       width: 100%;
     }
     .hero-content {
-      display: grid;
+      place-self: center;
       justify-items: center;
+      display: grid;
       color: var(--c-white);
       align-self: center;
       translate: 0 -24px;
+      text-align: center;
 
       @media (width >= calc(700 / 16 * 1rem)) {
         max-width: 75%;
-        margin-inline: auto;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        justify-self: start;
+        justify-items: start;
+        text-align: left;
+        max-width: 55ch;
+        translate: 0;
+      }
+    }
+
+    p,
+    .button {
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        margin-inline-start: 95px;
       }
     }
 
     p {
       margin-block: 24px 32px;
+    }
+
+    .hero-l-arrow {
+      display: none;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        display: block;
+        align-self: center;
+        translate: -140px 32px;
+      }
     }
 
     .hero-r-arrow {
@@ -324,6 +345,12 @@
 
       @media (width >= calc(700 / 16 * 1rem)) {
         translate: -110px -34px;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        translate: 530px 100px;
+        grid-column: 2;
+        align-self: center;
       }
     }
 
@@ -335,6 +362,16 @@
         justify-self: end;
         align-self: end;
         translate: 30px -45px;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        display: none;
+      }
+
+      @media (width >= calc(1300 / 16 * 1rem)) {
+        display: block;
+        align-self: center;
+        translate: 30px 130px;
       }
     }
   }
