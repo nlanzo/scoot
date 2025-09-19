@@ -307,6 +307,11 @@
       color: var(--c-white);
       align-self: center;
       translate: 0 -24px;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        max-width: 75%;
+        margin-inline: auto;
+      }
     }
 
     p {
@@ -316,6 +321,21 @@
     .hero-r-arrow {
       align-self: end;
       translate: -240px -34px;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        translate: -110px -34px;
+      }
+    }
+
+    .hero-circles {
+      display: none;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        display: block;
+        justify-self: end;
+        align-self: end;
+        translate: 30px -45px;
+      }
     }
   }
 }
