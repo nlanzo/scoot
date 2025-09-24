@@ -139,6 +139,11 @@
       grid-template-columns: 1fr min(calc(100% - 80px), calc(1110 / 16 * 1rem)) 1fr;
     }
 
+    &.fb-col {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, calc(calc(100% - 64px) / 3)) 1fr;
+    }
+
     &.small {
       @media (width >= calc(700 / 16 * 1rem)) and (width < calc(1000 / 16 * 1rem)) {
         grid-template-columns:
@@ -397,8 +402,8 @@
   }
 }
 
-@layer features {
-  .features {
+@layer features-sm {
+  .features-sm {
     .gray-line {
       display: none;
       position: relative;
@@ -535,6 +540,86 @@
       @media (width >= calc(700 / 16 * 1rem)) and (width < calc(1000 / 16 * 1rem)) {
         grid-column: 2;
         grid-row: 2;
+      }
+    }
+  }
+}
+
+@layer features-lg {
+  .features-lg {
+    display: grid;
+    row-gap: 120px;
+    padding-block-end: 120px;
+
+    .feature-lg {
+      row-gap: 56px;
+    }
+
+    .feature-lg-img {
+      border-radius: 50%;
+      grid-column: 2 / 5;
+      grid-row: 1 / 2;
+    }
+
+    .feature-lg-text {
+      grid-column: 2 / 5;
+      display: grid;
+      row-gap: 32px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .feature-lg-title {
+      color: var(--c-dark-navy);
+      font-size: var(--fs-32);
+
+      @media (width >= calc(700 / 16 *1rem)) {
+        font-size: var(--fs-48);
+      }
+    }
+
+    .feature-lg-descr {
+      color: var(--c-dim-grey);
+    }
+
+    .feature-lg-arrow-l,
+    .feature-lg-arrow-r {
+      height: 138px;
+      object-fit: cover;
+      grid-row: 1 / 2;
+    }
+
+    .feature-lg-arrow-l {
+      grid-column: 2 / -1;
+      align-self: end;
+      object-position: left bottom;
+    }
+
+    .feature-lg-arrow-r {
+      grid-column: 1 / 5;
+      align-self: start;
+      object-position: right bottom;
+      translate: -80px -5px;
+    }
+
+    .feature-lg:nth-child(1),
+    .feature-lg:nth-child(3) {
+      .feature-lg-arrow-r {
+        display: none;
+      }
+    }
+
+    .feature-lg:nth-child(2) {
+      .feature-lg-arrow-l {
+        display: none;
+      }
+    }
+
+    .feature-lg:nth-child(3) {
+      .feature-lg-arrow-l {
+        grid-column: 3 / -1;
+        align-self: start;
+        translate: 20px 0;
       }
     }
   }
