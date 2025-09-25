@@ -249,6 +249,7 @@
     display: none;
 
     + .topnav__menu .topnav__menu-content {
+      opacity: 1;
       translate: 0;
 
       @media (prefers-reduced-motion) {
@@ -276,6 +277,7 @@
     justify-content: space-between;
 
     @media (width < calc(700 / 16 * 1rem)) {
+      opacity: 0;
       flex-direction: column;
       position: fixed;
       inset: 60px 120px 0 0;
@@ -283,6 +285,7 @@
       background-color: var(--c-xdark-navy);
       translate: -100vw 0;
       transition: translate 0.5s ease-in-out;
+      tansition-property: opacity;
     }
 
     @media (width < calc(700 / 16 * 1rem)) and (prefers-reduced-motion) {
