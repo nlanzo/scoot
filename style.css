@@ -610,15 +610,21 @@
 
     .feature-lg-arrow-l,
     .feature-lg-arrow-r {
-      height: 138px;
+      min-height: 138px;
       object-fit: cover;
       grid-row: 1 / 2;
     }
 
     .feature-lg-arrow-l {
+      outline: 3px solid blue;
       grid-column: 2 / -1;
       align-self: end;
       object-position: left bottom;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        width: 100%;
+        object-fit: cover;
+      }
     }
 
     .feature-lg-arrow-r {
