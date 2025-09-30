@@ -748,16 +748,30 @@
     background-image: url("./assets/patterns/semi-circles.svg");
     background-repeat: no-repeat;
     background-position: 77.5% bottom;
-    background-size: 1153px;
+    background-size: 320%;
     color: var(--c-white);
     justify-items: center;
     text-align: center;
     overflow-x: clip;
 
+    @media (width >= calc(700 / 16 * 1rem)) {
+      background-position: 57% 120%;
+      background-size: 150%;
+    }
+
+    @media (width >= calc(700 / 16 * 1rem)) {
+    }
+
     .cta-content {
       display: grid;
       row-gap: 40px;
       padding-block: 88px;
+      max-width: 320px;
+
+      @media (width >= calc(700 / 16 * 1rem)) {
+        max-width: 500px;
+        padding-block: 62px;
+      }
     }
 
     .cta-buttons {
