@@ -759,7 +759,11 @@
       background-size: 150%;
     }
 
-    @media (width >= calc(700 / 16 * 1rem)) {
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      justify-items: stretch;
+      text-align: start;
+      background-position: 195% 120%;
+      background-size: 82%;
     }
 
     .cta-content {
@@ -771,6 +775,19 @@
       @media (width >= calc(700 / 16 * 1rem)) {
         max-width: 500px;
         padding-block: 62px;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        max-width: 100%;
+        align-items: center;
+        padding-block: 100px;
+      }
+    }
+
+    .cta-title {
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        max-width: calc(415 / 16 * 1rem);
+        grid-row: 1 / span 1;
       }
     }
 
@@ -786,10 +803,11 @@
       :last-child {
         justify-self: start;
       }
-    }
 
-    .cta-circles {
-      min-width: 1153px;
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        grid-row: 1 / span 1;
+        justify-self: end;
+      }
     }
   }
 }
