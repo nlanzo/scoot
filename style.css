@@ -811,3 +811,15 @@
     }
   }
 }
+
+@layer footer {
+  .footer {
+    background: var(--c-xdark-navy);
+
+    .footer-link {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      color: var(--c-dim-grey);
+    }
+  }
+}
