@@ -814,12 +814,33 @@
 
 @layer footer {
   .footer {
+    padding-block: 64px 88px;
     background: var(--c-xdark-navy);
+    color: var(--c-white);
+    display: grid;
+    justify-items: center;
+    text-align: center;
+
+    .footer-nav {
+      margin-block: 40px 85px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 16px;
+    }
 
     .footer-link {
       font-family: var(--ff-mono);
       font-weight: 700;
       color: var(--c-dim-grey);
+    }
+
+    .footer-social {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 16px;
     }
   }
 }
