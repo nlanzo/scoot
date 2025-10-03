@@ -833,12 +833,23 @@
       }
     }
 
+    .footer-logo-link {
+      .footer-logo path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover {
+        .footer-logo path {
+          fill: var(--c-yellow);
+        }
+      }
+    }
+
     .footer-nav {
       margin-block: 40px 85px;
 
       @media (width >= calc(700 / 16 * 1rem)) {
         margin: 0 0 0 60px;
-        gap: 32px;
       }
     }
 
@@ -850,6 +861,7 @@
       @media (width >= calc(700 / 16 * 1rem)) {
         flex-direction: row;
         grid-template-columns: repeat(3, auto);
+        gap: 32px;
       }
     }
 
@@ -857,6 +869,11 @@
       font-family: var(--ff-mono);
       font-weight: 700;
       color: var(--c-dim-grey);
+      transition: color 150ms ease-in-out;
+
+      &:hover {
+        color: var(--c-yellow);
+      }
     }
 
     .footer-social {
@@ -867,6 +884,17 @@
 
       @media (width >= calc(700 / 16 * 1rem)) {
         justify-self: end;
+        gap: 24px;
+      }
+    }
+
+    .footer-social-link {
+      path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover path {
+        fill: var(--c-white);
       }
     }
   }
