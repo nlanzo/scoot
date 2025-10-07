@@ -82,7 +82,6 @@
 
   body {
     margin: 0;
-    padding-block-end: 50vh; /* temporary - delete after complete */
     font-family: "Lexend Deca", Arial, Helvetica, sans-serif;
     font-size: var(--fs-15);
   }
