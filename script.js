@@ -48,3 +48,10 @@ btnClose.addEventListener("click", closeMobileMenu)
 media.addEventListener("change", function (e) {
   setupTopNav(e)
 })
+
+// Prevent placeholder links from scrolling to top
+document.querySelectorAll('a[href=""]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault()
+  })
+})
